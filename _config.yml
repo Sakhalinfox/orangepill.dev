@@ -28,7 +28,7 @@ repository: "Sakhalinfox/orangepill.dev"
 
 footer:
   links:
-    -label:"Nostr"
+    -label: "Nostr"
      icon: "fa-solid fa-n"
      url: "https://damus.io/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52"
 
