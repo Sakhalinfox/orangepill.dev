@@ -17,28 +17,81 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-include: [".well-known"]
 title: Orangepill.dev
 email: admin@orangepill.dev
 description: "Orange pilled pleb working for the plebs."
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://orangepill.dev" # the base hostname & protocol for your site, e.g. http://example.com
 domain: "orangepill.dev"
-#repository: "Sakhalinfox/orangepill.dev"
-
-#footer:
-#  links:
-#    -label: "Nostr"
-#     icon: "fa-solid fa-n"
-#     url: "https://damus.io/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52"
+minimal_mistakes_skin: "dark"
+search: true
+github_username: sakhalinfox
 
 # Build settings
+markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-#minimal_mistakes_skin: "dark"
+
+#Outputting
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /page:num/
+
+#Plugins
 plugins:
   - jekyll-feed
   - jekyll-include-cache
 
+author:
+  name   : "EzoFox"
+  avatar : "https://i.ibb.co/5r42hP4/ezofoxprof.png"
+  bio    : "An orange pilled pleb. Nostr NIP05 - **ezofox@orangepill.dev**"
+  links:
+    - label: "Github"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Sakhalinfox"
+    - label: "🤙 Nostr Profile"
+      icon: ""
+      url: "https://damus.io/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: false
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+footer:
+  links:
+    - label: "🤙 Nostr"
+      icon: ""
+      url: "https://damus.io/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52"
+    - label: "Github"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Sakhalinfox"
+
+include:
+  - _pages
+  - .well-known
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
