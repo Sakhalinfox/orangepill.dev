@@ -24,17 +24,17 @@ description: "Orange pilled pleb working for the plebs."
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://orangepill.dev" # the base hostname & protocol for your site, e.g. http://example.com
 domain: "orangepill.dev"
-repository: "Sakhalinfox/orangepill.dev"
+#repository: "Sakhalinfox/orangepill.dev"
 
-footer:
-  links:
-    -label: "Nostr"
-     icon: "fa-solid fa-n"
-     url: "https://damus.io/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52"
+#footer:
+#  links:
+#    -label: "Nostr"
+#     icon: "fa-solid fa-n"
+#     url: "https://damus.io/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52"
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "dark"
+#minimal_mistakes_skin: "dark"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
