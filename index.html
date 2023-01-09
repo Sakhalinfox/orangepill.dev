@@ -1,6 +1,42 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
+title: "Nostr Relay"
+layout: splash
+date: 2023-01-09T01:53:00-05:00
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  #overlay_image:
+  actions:
+    - label: "Copy Relay URL"
+      url: "wss://nostr.orangepill.dev"
+  #caption: ""
+excerpt: "We run a free Nostr public relay located in Virginia, USA."
+#intro:
+  #- excerpt: ''
+feature_row:
+  - image_path:
+    alt: ""
+    title: "Nostr Guides"
+    excerpt: "FAQ and helpful guides to learn about Nostr."
+    url: "#coming-soon"
+    btn_label: "Coming Soon"
+    btn_class: "btn--primary"
+  - image_path:
+    alt: ""
+    title: "Orange Pill Guides"
+    excerpt: "Helpful guides using Bitcoin and Lightning wallets and services."
+    url: "#coming-soon"
+    btn_label: "Coming Soon"
+    btn_class: "btn--primary"
+  - image_path:
+    alt: ""
+    title: "Nostr NIP-05 Identifier"
+    excerpt: "Apply for a free NIP-05 Identifier with us to get your own **name@orangepill.dev**"
+    url: "/services/nostr-public-relay-and-nip05-identification-services"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
 ---
+
+{% include feature_row id="intro" type="center" %}
+
+{% include feature_row id="feature_row" %}

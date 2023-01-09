@@ -16,10 +16,10 @@ To view details about supported relay's supported NIP's visit [Nostr.watch](http
 
 For monitoring the uptime status of our relay and any future Nostr, Bitcoin or Lightning⚡ services that we will run, visit our uptime monitoring page [here](https://uptime.orangepill.dev). Service status checks are done every 5 minutes, response times updated every 6 hours and graphs updated every day. Incidents are logged to our [GitHub repository](https://github.com/Sakhalinfox/orangepilldevuptime) and details about service issues and resolutions will be reported under the [Issue](https://github.com/Sakhalinfox/orangepilldevuptime/issues) topics.
 
-We also offer a NIP05 identification service with the handle `<yourname>@orangepill.dev` (this is not an email address), which at the time of writing this post is free for anyone to apply for by reaching me out via direct message on your Nostr client:  
-> Find me by my pubkey: **`npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52`** ([Snort.social profile URL](https://snort.social/p/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52)) or my NIP05 Identifier: **`ezofox@orangepill.dev`**
+We also offer a [NIP-05](https://github.com/nostr-protocol/nips/blob/master/05.md) identifier service with the handle `<yourname>@orangepill.dev` (this is not an email address), which at the time of writing this post is free for anyone to apply for by reaching me out via direct message on your Nostr client:  
+> Find me by my pubkey: **`npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52`** ([Snort.social profile URL](https://snort.social/p/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52)) or my NIP-05 Identifier: **`ezofox@orangepill.dev`**
 
-This service is currently free as we are willing to assist new users of Nostr to have a seamless onboarding experience and setup process for NIP05 identifier verification. In the near future we may add paid plans in which all our NIP05 verified users will have free access to our private relay when that is available.
+This service is currently free as we are willing to assist new users of Nostr to have a seamless onboarding experience and setup process for NIP-05 identifier verification. In the near future we may add paid plans in which all our NIP-05 verified users will have free access to our private relay when that is available.
 
 #### If you found this post useful feel free to tip at LNAddress: scarredsofa23@walletofsatoshi.com or LNURL:
 ![Tipjar](https://raw.githubusercontent.com/Sakhalinfox/orangepill.dev/main/Tiplnurl.png)
