@@ -26,6 +26,7 @@ domain: "orangepill.dev"
 minimal_mistakes_skin: "dark"
 search: true
 github_username: sakhalinfox
+logo: /assets/images/logo.png
 
 # Build settings
 markdown: kramdown
