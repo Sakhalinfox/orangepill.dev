@@ -9,9 +9,10 @@ tags:
   - LNURL
   - NIP-05
   - LNAddress
+toc: true
 ---
 
-## Understanding Lightning Addresses
+# Understanding Lightning Addresses
 Lightning Address is a reusable identifier that looks like an email address and can be used to send and receive payments over the Lightning Network. It is easy to remember unlike an LNURL. Some Lightning wallets and services provide this feature where they may either let you choose an identifier on their domain or will randomly generate one for you. For example: Wallet of Satoshi is a custodial Lightning wallet that auto generates one for you such as `<randomidentifier>@walletofsatoshi.com`.  
 
 >**Note**: This is this is not an email address and cannot be used to send or receive emails, unless you also setup an email server and create an email address with that same identifier and domain. 
@@ -37,12 +38,12 @@ It is likely that the Lightning Address service provider running the LNURLp endp
 
 **Note**: I have used https://lightningdecoder.com/ to decode the Lightning Address.
 
-## How to setup Lightning Address redirection
+# How to setup Lightning Address redirection
 If you own a domain.com and a web server and would like to use an identifier on your domain, but would like to receive payments or to allow others to send payments to you using `<youridentifier>@yourdomain.com` then all you need to do is to setup a simple redirection on your web server.
 
 **Note**: To keep this short, I will assume that your domain's or subdomain's DNS is already pointing to your web server using either an A record, AAAA record or CNAME and can access your web server.
 
-### Setup on NGINX
+## Setup on NGINX
 Open `/etc/nginx/sites-enabled/<yourdomain.com>` with a text editor like nano or vim from your console that you use to SSH into your server. Replace `<yourdomain.com>` with your `domain.com`.
 
 **Step 1:** Edit the below file
@@ -81,7 +82,7 @@ As per the above example I can now share ezofox@orangepill.dev as my Lightning A
 or
 >$ service nginx restart
 
-### Setup on Apache
+## Setup on Apache
 Redirection on Apache can be similarly achieved using the Redirect Directive. Depending on OS or your configuration you may have to edit with your text editor nano, vim or others one of these files  `/etc/apache2/sites-available/000-default.conf ` or `/etc/apache2/sites-available/example.com.conf` (In Ubuntu) or `/etc/httpd/conf.d/vhost.conf` (In CentOS)
 
 *Source: https://www.linode.com/docs/guides/redirect-urls-with-the-apache-web-server/*
@@ -99,5 +100,9 @@ You can also accomplish this by editing `.htaccess` and adding the necessary Red
 
 For any other web servers, you may need to read the respective documentation of those web server implementations to understand how to perform a similar permanent redirection.
 
+If you found this post useful feel free to leave a Lightning tip at:
 
+**Lightning Address**: ezofox@orangepill.dev
+
+**LNURL**: ![Tipjar](https://raw.githubusercontent.com/Sakhalinfox/orangepill.dev/main/Tiplnurl.png)
 
