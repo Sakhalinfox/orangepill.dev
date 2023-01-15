@@ -1,6 +1,6 @@
 ---
 title:  "Guide to verify your Nostr profile with a NIP-05 identifier on your domain"
-date:   2023-01-10T19:53:00-05:00
+date:   2023-01-14T03:10:00-05:00
 categories: 
   - nostr-guides
 tags:
