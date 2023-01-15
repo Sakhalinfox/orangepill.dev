@@ -141,7 +141,7 @@ Open `/etc/nginx/sites-enabled/<yourdomain.com>` with a text editor like nano or
 
 1.  Edit the below file using a text editor:
 
- 	>$ nano /etc/nginx/sites-enabled/<yourdomain.com>
+	> $ nano /etc/nginx/sites-enabled/<yourdomain.com>
 	```
 	server {
 		location /.well-known/lnurlp {
