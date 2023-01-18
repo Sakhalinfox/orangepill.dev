@@ -45,25 +45,30 @@ GitHub pages lets you build static websites and link your custom domain. If you 
     Depending on your domain provier you may have to enter `@` or leave blank the host value to use the root domain in your NIP-05 identifier. If you want to use a subdomain enter the subdomain name in that field.
 
     >**Note**: If GitHub updates the above IP addresses please refer to their [page](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+    {: .notice--info}
 
 2. Register and Login to your GitHub account and visit [here](https://github.com/new) to create a new repository. Make sure to select 'Public' repository if you want the GitHub Pages setup to be free. Using a 'Private' repository with GitHub pages is a paid feature and requires an upgrade.
 
     >**Note**: If want to use an existing repository that already points to your custom domain or you want to use GitHubs free subdomain skip to **step 4**.
+    {: .notice--info}
 
 3. Go to the 'Settings' page of your repository and navigate to 'Pages' under Code and automation section on the sub menu or modify the below URL to visit it directly: 
 `https://github.com/<yourusername>/<repository>/settings/pages`
 
     >**Note**: Replace `<yourusername>` with your GitHub username and `<repository>` with the repository name.
+    {: .notice--info}
 
     Under Build and deployment select source as 'Deploy from a branch'. Select branch as 'main' or 'master', '/root' and click save.
 
-    Under Custom domain enter your domain and click save. GitHub will perform a DNS check to verify that the A records setup on your domain in step 1 are accurate. 
+    Under Custom domain enter your domain and click save. GitHub will perform a DNS check to verify that the A records setup on your domain in step 1 are accurate.
     
     > **Note**: It this fails, wait for your domain's DNS to complete propagation and retry. DNS propagation could take anywhere from a few minutes to hours.
+    {: .notice--info}
 
     Check 'Enforce HTTPS'. This will generate an SSL certificate for your Domain from GitHub for free and assign it.
 
     >**Note**: At times, this may take a while to generate.
+    {: .notice--info}
 
 4. Navigate to your repository's Code tab `https://github.com/<yourusername>/<repository>` and click on the button Add File > Create new file.
 
@@ -75,9 +80,11 @@ GitHub pages lets you build static websites and link your custom domain. If you 
       }
     }
     ```
-    >**Note**: Replace `<your-nostr-username>` with your Nostr social username and `<hex-public-key>`. To convert npub to hex public key use [damus.io/key](https://damus.io/key) or [key-convrtr](https://github.com/rot13maxi/key-convertr) tool. Do not paste your private keys in these tools.
+    >**Note**: Replace `<your-nostr-username>` with your Nostr social username and `<hex-public-key>`. To convert npub to hex public key use [damus.io/key](https://damus.io/key) or [key-convrtr](https://github.com/rot13maxi/key-convertr) tool. Do not paste your private keys into these tools.
+    {: .notice--info}
 
     Create a new file `_config.yml` or update it to add the below line:
+
     ```
     include:
       - .well-known
@@ -108,13 +115,15 @@ If you self-host, own a webserver, VPS or Cloud server  this guide should provid
         }
         
 
-      >**Note**: Replace `<your-nostr-username>` with your Nostr social username and `<hex-public-key>`. To convert npub to hex public key use [damus.io/key](https://damus.io/key) or [key-convrtr](https://github.com/rot13maxi/key-convertr) tool. Do not paste your private keys in these tools.
+      >**Note**: Replace `<your-nostr-username>` with your Nostr social username and `<hex-public-key>`. To convert npub to hex public key use [damus.io/key](https://damus.io/key) or [key-convrtr](https://github.com/rot13maxi/key-convertr) tool. Do not paste your private keys into these tools.
+      {: .notice--info}
 
 3. Verify your NGINX configuration file exists for your domain in the following path: `/etc/nginx/sites-available/yourdomain.com` and generate an SSL certificate.
 
     To generate a free SSL certificate for your domain use [Certbot](https://certbot.eff.org/instructions). Visit that link and select 'Nginx' and your Operating System for installation instructions. Generating an SSL certificate for your domain is necessary because some Nostr clients may validate your NIP-05 identifier nostr.json file via a HTTPS only connection. 
 
       > **Note**: Ensure that your NGINX web server is running and accessible on the internet by browsing using the IP address of your web server. You must configure and open ports 80 and 443 on your firewalls or router as necessary or else certbot will not be able to connect to your server to generate the SSL certificate. Also, ensure both `yourdomain.com` and `www.yourdomain.com` are accessible. There is a 5 attempt per hour limit. So to save time, verify all of these.
+      {: .notice--info}
     
     Run the command (on Linux as sudo):
     ```
@@ -172,12 +181,14 @@ If you self-host, own a webserver, VPS or Cloud server  this guide should provid
         
 
       >**Note**: Replace `<your-nostr-username>` with your Nostr social username and `<hex-public-key>`. To convert npub to hex public key use [damus.io/key](https://damus.io/key) or [key-convrtr](https://github.com/rot13maxi/key-convertr) tool. Do not paste your private keys in these tools.
+      {: .notice--info}
 
 3. Verify your Apache configuration file exists for your domain in the following path: `/etc/apache2/sites-available/yourdomain.conf` and generate an SSL certificate.
 
     To generate a free SSL certificate for your domain use [Certbot](https://certbot.eff.org/instructions). Visit that link and select 'Apache' and your Operating System for installation instructions. Generating an SSL certificate for your domain is necessary because some Nostr clients may validate your NIP-05 identifier nostr.json file via a HTTPS only connection. 
 
       > **Note**: Ensure that your Apache web server is running and accessible on the internet by browsing using the IP address of your web server. You must configure and open ports 80 and 443 on your firewalls or router as necessary or else certbot will not be able to connect to your server to generate the SSL certificate. Also, ensure both `yourdomain.com` and `www.yourdomain.com` are accessible. There is a 5 attempt per hour limit. So to save time, verify all of these.
+      {: .notice--info}
     
     Run the command (on Linux as sudo):
     ```
@@ -201,9 +212,12 @@ If you self-host, own a webserver, VPS or Cloud server  this guide should provid
         ```
     2. Open .htaccess file located in `/var/www/<yourdomain.com>/public_html/.htaccess`, add the lines and save file:
         ```
-        Header set Access-Control-Allow-Origin "*" 
-        Header set Access-Control-Allow-Headers "*" 
-        Header set Access-Control-Allow-Methods "GET" 
+        <If "%{REQUEST_URI} =~ m#^/.well-known/#">
+        Header always set Access-Control-Allow-Origin "*"
+        Header always set Access-Control-Allow-Headers "*" 
+        Header always set Access-Control-Allow-Methods "GET" 
+        </If> 
+        
         ```
     3. Test Apache Configuration:
         ```
@@ -221,11 +235,11 @@ If you self-host, own a webserver, VPS or Cloud server  this guide should provid
       In [snort.social](https://snort.social) you should see a 'Green check' next to your NIP-05 Identifier indicating that it was successfully setup and accessible with the above defined CORS permission.
 
 
-If you found this post useful feel free to leave a Lightning tip at:
+If you found this guide useful feel free to leave a Lightning tip at:
 
-**Lightning Address**: ezofox@orangepill.dev
-
+**Lightning Address**: ezofox@orangepill.dev, OR
 **LNURL**: ![Tipjar](https://raw.githubusercontent.com/Sakhalinfox/orangepill.dev/main/Tiplnurl.png)
+{: .notice--success}
 
 
 

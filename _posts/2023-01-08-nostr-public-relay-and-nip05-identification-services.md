@@ -23,18 +23,19 @@ Service status checks are done every 5 minutes, response times updated every 6 h
 
 We also offer a [NIP-05](https://github.com/nostr-protocol/nips/blob/master/05.md) identifier service with the handle `<yourname>@orangepill.dev` (this is not an email address), which at the time of writing this post is free for anyone to apply for by reaching me out via direct message on your Nostr client:  
 
-> Find me by my pubkey: **[npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52](https://snort.social/p/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52)**
+>**Note**: 
+>Find me by my pubkey: **[npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52](https://snort.social/p/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52)**
 >
 >or my NIP-05 Identifier: **[ezofox@orangepill.dev]((https://snort.social/p/npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52))**
+{: .notice--info}
 
 This service is currently free as we are willing to assist new users of Nostr to have a seamless onboarding experience and setup process for NIP-05 identifier verification. In the near future we may add paid plans in which all our NIP-05 verified users will have access to our private relay.
 
 If you found this post useful feel free to leave a Lightning tip at:
 
-**Lightning Address**: ezofox@orangepill.dev
-
+**Lightning Address**: ezofox@orangepill.dev, OR
 **LNURL**: ![Tipjar](https://raw.githubusercontent.com/Sakhalinfox/orangepill.dev/main/Tiplnurl.png)
-
+{: .notice--success}
 
 
 
