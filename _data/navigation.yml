@@ -1,0 +1,7 @@
+main:
+  - title: "Home"
+    url: / 
+  - title: "Posts"
+    url: /posts/
+  - title: "Service Health"
+    url: "https://uptime.orangepill.dev"
