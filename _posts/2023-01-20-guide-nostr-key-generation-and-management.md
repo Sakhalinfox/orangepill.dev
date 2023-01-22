@@ -1,6 +1,6 @@
 ---
 title:  "Guide to generate and manage Nostr keys and sign events"
-date:   2023-01-14T03:10:00-05:00
+date:   2023-01-22T03:10:00-05:00
 categories: 
   - nostr-guides
 tags:
@@ -261,10 +261,37 @@ Limitations:
 
 ### Nos2x, Nos2x-fox and Alby Nostr signer extensions
 
-The [Nos2x](https://github.com/fiatjaf/nos2x) open-source extension is available for [Google Chrome and Chromium browsers](https://chrome.google.com/webstore/detail/nos2x/kpgefcfmnafjgpblomihpgmejjdanjjp). [Nos2x-fox](https://diegogurpegui.com/nos2x-fox/) is an open-source maintained extension forked from Nos2x, but for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/nos2x-fox/). 
+The [Nos2x](https://github.com/fiatjaf/nos2x) open-source extension is available for [Google Chrome and Chromium browsers](https://chrome.google.com/webstore/detail/nos2x/kpgefcfmnafjgpblomihpgmejjdanjjp). [Nos2x-fox](https://diegogurpegui.com/nos2x-fox/) is an open-source maintained extension forked from Nos2x, but for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/nos2x-fox/).
+
+Benefits of using Nos2x and Nos2x-fox:
+
+- Lets you login to Nostr clients without sharing your private key. 
+- Ability to generates new private keys.
+- Displays the associated public key.
+- Nos2x - Can add default preferred relays list. Not available yet in Nos2x-fox.
+- Nos2x - handles `nostr:` links.
+
+Limitations of using Nos2x and Nos2x-fox:
+
+- No unlock password to prevent prying eyes from opening your browser and viewing the extension's options page to view your stored private key.
+- Ability to revoke previously granted authorizations for Nostr web clients.
 
 
-[Getalby](https://github.com/getAlby/lightning-browser-extension) is another open-source extension and a Bitcoin Lightning Wallet which also does signing of Nostr events. It is available for both [Firefox](https://addons.mozilla.org/en-US/firefox/addon/alby/) and [Chrome](https://chrome.google.com/webstore/detail/alby-bitcoin-lightning-wa/iokeahhehimjnekafflcihljlcjccdbe) browsers.
+[Getalby](https://github.com/getAlby/lightning-browser-extension) is another open-source extension and a Bitcoin Lightning Wallet which also does signing of Nostr events. It is available for both [Firefox](https://addons.mozilla.org/en-US/firefox/addon/alby/) and [Chrome](https://chrome.google.com/webstore/detail/alby-bitcoin-lightning-wa/iokeahhehimjnekafflcihljlcjccdbe) browsers. 
+
+Benefits of using Alby:
+
+ - Lets you login to Nostr clients without sharing your private key.
+ - It lets you setup an unlock password to protect your stored private key from prying eyes.
+ - It encrypts the generated private key.
+ - If you forget your unlock password you can reset it, relogin to your Alby account and regenerate your private key. It should generate the same private key as it did before. The Nostr key is associated with your account or node and you do not have to worry about losing your key. Read more [here](https://guides.getalby.com/overall-guide/alby-browser-extension/features/nostr).
+ - Ability to revoke previous authorizations for Nostr web clients.
+
+Limitation of using Alby:
+
+- The Nostr key associated with the node or account is good but if it is compromised, it would be nice to generate new keys and associate the new key with the node or account. 
+- Does not currently display the public key.
+
 
 
 >**Note**: These extensions will prompt for you to allow access to all website data. This may be because the extension will need to sign your events on Nostr web client websites. If privacy and security are your concerns, use a separate browser profile or browser for your Nostr activities.
