@@ -227,6 +227,8 @@ Other tools to generate offline keys:
  - [glasnostr](https://github.com/eyelight/glasnostr) - Vanity key generator
  - [nostr.rest](https://www.nostr.rest/)- Browser based, but run it offline if you want to use it
  - [nostr-pubminer](https://github.com/lacaulac/nostr-pubminer)
+ - [Rana](https://github.com/grunch/rana) - Proof of Work pubkey generator for vanity or leading zeros
+ - [noscl](https://github.com/fiatjaf/noscl) - Generates BIP39 seed phrase and its Nostr key. 
 
 # Tools and clients to manage Nostr keys and authorize signing of events
 
@@ -265,7 +267,7 @@ The [Nos2x](https://github.com/fiatjaf/nos2x) open-source extension is available
 
 Benefits of using Nos2x and Nos2x-fox:
 
-- Lets you login to Nostr clients without sharing your private key. 
+- Lets you login to Nostr clients without sharing your private key with the client.
 - Ability to generates new private keys.
 - Displays the associated public key.
 - Nos2x - Can add default preferred relays list. Not available yet in Nos2x-fox.
