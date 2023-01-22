@@ -361,7 +361,7 @@ Listed below are native clients that are in experimental or alpha development st
 - [Gossip - for multiple desktop OS - built using rust-lang](https://github.com/mikedilger/gossip)
 - [Nostr_console - for multiple desktop OS - built using Dart](https://github.com/vishalxl/nostr_console): It can also be run on [web browser](https://github.com/vishalxl/nostr_console/discussions/18) to access on desktop or phone
 - [Nostrid - multi platform](https://github.com/lapulpeta/Nostrid)
-- [Blockcore-Notes](https://github.com/block-core/blockcore-notes) - Can build and run locally or can use their web [instance](notes.blockcore.net)
+- [Blockcore-Notes](https://github.com/block-core/blockcore-notes) - Can build and run locally or can use their web [instance](https://notes.blockcore.net)
 
 
 If you found this guide useful feel free to leave a Lightning tip at:

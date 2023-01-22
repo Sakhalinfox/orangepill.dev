@@ -2,7 +2,7 @@
 title:  "Guide to create Lightning Address redirection on your domain"
 date:   2023-01-10T19:53:00-05:00
 categories: 
-  - lightning-guides
+  - bitcoin-guides
 tags:
   - Lightning
   - LightningAddress
