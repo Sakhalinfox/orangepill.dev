@@ -59,14 +59,14 @@ Since Firefox does not provide an easy option to configure the permission in the
 
 ### Nos2x-fox manifest.json configuration
 
-- Launch the browser, install [Nos2x-fox](https://github.com/diegogurpegui/nos2x-fox/releases) and download the latest version of the Fiefox `.xpi` file to your drive.
+- Install [git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/) on your OS,  clone Nos2x-fox as below and change directory to that cloned folder:
 
-  >**Note**: To download the `.xpi` file in Firefox, right click on the `.xpi` file under `Assets` section in GitHub and click `Save Link As`. This should download the file instead of installing it.
-  {: .notice--info}
+  ```
+  git clone https://github.com/diegogurpegui/nos2x-fox
+  cd nos2x-fox/src
+  ```
 
-- Open the `.xpi` file with an Archive manager of your preference like 7-zip or any others for your OS and extract all the contents to a folder.
-
-- Open the folder where the contents were extracted to, find `manifest.json` and opnen it with a text editor. Find the `"content_scripts":` `"matches"` section and update it as below and save the changes:
+- Find `manifest.json` in `nos2x-fox/src` folder and open it with a text editor. Find the `"content_scripts":` `"matches"` section and update it as below and save the changes:
 
     ```
     Replace this:
@@ -95,10 +95,22 @@ Since Firefox does not provide an easy option to configure the permission in the
         }
 
     ```
+    
   >**Note**: Change `https://<nostrwebclient>.tld/*` with the Nostr client domains that you would like to permit the extension to access data to. For example: `https://snort.social/*`. Each entry should be on a different line and separated by a comma `","`. 
   {: .notice--info}
 
-- [Install](https://www.hostinger.com/tutorials/how-to-install-yarn) `yarn` dependency manager to build nos2x-fox after the above modification is made and run the below command to create the build:
+  Also, find `browser_specific_settings` and update the `id` value to an email address of your own. A unique ID will be needed to sign your extension with Mozilla.
+
+  ```
+    "browser_specific_settings": {
+    "gecko": {
+      "id": "<yourmail@emailhost.tld>",
+      "update_url": "https://diegogurpegui.com/nos2x-fox/updates.json"
+    }
+  }
+  ```
+
+- Change directory back to the root folder `nos2x-fox` and [Install](https://www.hostinger.com/tutorials/how-to-install-yarn) `yarn` dependency manager to build nos2x-fox after the above modification is made. Run the below command to create the build:
 
   ```
   yarn run build
@@ -106,13 +118,15 @@ Since Firefox does not provide an easy option to configure the permission in the
 
   This should create a new folder `dist` in your current directory.
 
-- Install [Web-ext](https://github.com/mozilla/web-ext) command line tool provided by Mozilla by referring to their GitHub page, using npm or on Linux from your distro's repository. We will use this tool to build an extension zip file from the contents of the `dist` folder. After installation, run the below command in the extensions root folder, i.e; the folder in which you extracted the `.xpi` file:
+- Install [Web-ext](https://github.com/mozilla/web-ext) command line tool provided by Mozilla by referring to their GitHub page, using npm or on Linux from your distro's repository. We will use this tool to build an extension zip file from within the `dist` folder, so change your directory to `nos2x-fox/dist`. 
+
+  After installing `web-ext`, run the below command in the folder `nos2x-fox/dist`:
 
   ```
   web-ext build
   ```
 
-  This should create an extension zip file in `dist/web-ext-artifacts/`
+  This should create an extension zip file in `nos2x-fox/dist/web-ext-artifacts/`
 
   > **Note**: At this point the `.zip` file extension that got built using web-ext is an unsigned extension. This means that you will not be able to install it in Firefox just yet. Firefox blocks installation of unsigned extensions to prevent malicious extensions from running. The expectation is that you will need to submit and upload the zip file Add-on to Mozilla for a review of the permissions and code, which is mostly automated, and you should then be able to distribute it manually or publish it on the Mozilla extension store.
   {: .notice--info}
@@ -125,15 +139,16 @@ Since Firefox does not provide an easy option to configure the permission in the
   - Open the extensions page or visit `about:addons` in the address bar and click on `Extensions`. Click the gear icon under manage your extensions and select `Install Add-on from file`. Browse to your built `.zip` file and install it. At this point you can setup the extension using the [guide](https://orangepill.dev/nostr-guides/guide-nostr-key-generation-and-management/) for Nostr key management and try visiting the Nostr client domains that you had configured in the manifest.json file. They should allow you to login using the extension, while your extension should not be able to authorize events or access data for other websites. 
   - You can verify the permissions under the manager your extension page of Firefox by clicking on the button with the three dots `"..."` next to the installed add-on, click manage and click permissions. You should only see your configured domains listed for access to data and you should be all done.
 
-- If you would like to sign the extension with Mozilla and install it without disabling signatures required configuration in your browser follow the below steps:
+- If you would like to sign the extension with Mozilla and install it without disabling the signatures required configuration in your browser, follow the below steps:
 
   - Visit [Firefox Extnesion Workshop](https://extensionworkshop.com/) and click 'Submit or manage extensions' button on the top right corner of the webpage.
   - Sign-up and login to Mozilla with your email or a throwaway email and visit [here](https://addons.mozilla.org/en-US/developers/addon/submit/distribution) to submit your modified add-on.
-  - Select 'On your own' as the distribution method, upload your `.zip` file, check `Firefox` as the version compatible and continue.
-  - 
+  - Select 'On your own' as the distribution method, upload your `.zip` file, check `Firefox` as the version compatible and continue. Mozilla will peform some automatic validations and checks to ensure that your extension can be signed. After it is successful, it will email you a confirmation in some time that your extension is signed succesfully and is available for download.
+  
+  Open the approved add-on link in the email from Mozilla to download the `.xpi` file. Right click on the file and save link as to download and distribute, or you can also click on it to install on your browser.
 
-
-
+  - At this point you can setup the extension using the [guide](https://orangepill.dev/nostr-guides/guide-nostr-key-generation-and-management/) for Nostr key management and try visiting the Nostr client domains that you had configured in the manifest.json file. They should allow you to login using the extension, while your extension should not be able to authorize events or access data for other websites. 
+  - You can verify the permissions under the manager your extension page of Firefox by clicking on the button with the three dots `"..."` next to the installed add-on, click manage and click permissions. You should only see your configured domains listed for access to data and you should be all done.
 
 **Lightning Address**: ezofox@orangepill.dev, OR
 **LNURL**: ![Tipjar](https://raw.githubusercontent.com/Sakhalinfox/orangepill.dev/main/Tiplnurl.png)
