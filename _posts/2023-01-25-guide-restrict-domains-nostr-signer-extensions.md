@@ -49,7 +49,7 @@ The setup on Chrome and Chromium forks is simple:
 
     {% include figure image_path="/assets/images/2023-01-25-guide-restrict-domains-nostr-signer-extensions/chrome_step5.png" alt="Chrome setup extensions page" caption="Extension permitted on snort.social" %}
 
-    {% include figure image_path="/assets/images/2023-01-25-guide-restrict-domains-nostr-signer-extensions/chrome_step6.png" alt="Extension on coracl.social not permitted" caption="Extension on coracl.social not permitted" %}
+    {% include figure image_path="/assets/images/2023-01-25-guide-restrict-domains-nostr-signer-extensions/chrome_step6.png" alt="Extension on coracle.social not permitted" caption="Extension on coracle.social not permitted" %}
 
 If you found this guide useful feel free to leave a Lightning tip at:
 
