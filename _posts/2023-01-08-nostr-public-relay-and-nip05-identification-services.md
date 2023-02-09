@@ -7,13 +7,14 @@ tags:
   - nostr
   - relay
   - nip05
+  - paid relay
 toc: true
 ---
 # Orangepill.dev Public Nostr Relay
 
-Our public Nostr relay is located in Virginia, USA, freely accessible by adding the following websocket URL: **`wss://nostr.orangepill.dev`** to your favourite Nostr clients. The relay implementation that we use is [Nostream](https://github.com/Cameri/nostream).
+Our public Nostr relay is located in Virginia, USA, accessible by making a one-time admission payment of 4500 Sats over [here](https://relay.orangepill.dev). The relay implementation that we use is [Nostream](https://github.com/Cameri/nostream).
 
-To view details about the supported NIP's visit [Nostr.watch](https://nostr.watch/relay/nostr.orangepill.dev). 
+To view details about the supported NIP's visit [Nostr.watch](https://nostr.watch/relay/relay.orangepill.dev). 
 
 For monitoring the uptime status of our relay, other public relays and any future Nostr, Bitcoin or Lightning⚡ services that we will run, visit our uptime monitoring page [here](https://uptime.orangepill.dev). 
 

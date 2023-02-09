@@ -45,7 +45,7 @@ plugins:
 author:
   name   : "EzoFox"
   avatar : "https://i.ibb.co/5r42hP4/ezofoxprof.png"
-  bio    : "An orange pilled pleb. Nostr NIP05 - **ezofox@orangepill.dev**"
+  bio    : "An orange pilled pleb. Nostr NIP-05 - **ezofox@orangepill.dev**"
   links:
     - label: "Github"
       icon: "fab fa-fw fa-github"

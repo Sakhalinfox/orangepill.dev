@@ -243,7 +243,7 @@ Benefits:
   These tools make use of `window.nostr` capability of the web browsers as mentioned in [NIP-07](https://github.com/nostr-protocol/nips/blob/master/07.md) to return the following without sharing your private key with the Nostr client:
 
   - Returns your puiblic key after you authorize.
-  - Returns `id`, `public key` and `signature` for signing an event. For example: When you make a post on Nostr social clients, they will need to be signed by your private key usign the extension, and only those three values are returned to the client.
+  - Returns `id`, `public key` and `signature` for signing an event. For example: When you make a post on Nostr social clients, they will need to be signed by your private key using the extension, and only those three values are returned to the client.
   - Returns Relay URLs
   - Returns ciphertext base64-encoded initialization vector `iv` as per [NIP-04](https://github.com/nostr-protocol/nips/blob/master/04.md) for encrypted direct messages
 
